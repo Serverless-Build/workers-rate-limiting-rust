@@ -1,0 +1,19 @@
+[package]
+name = "workers-rate-limiting-rust"
+version = "1.0.0"
+edition = "2021"
+license = "MIT-0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+worker = "=0.8.0"
+worker-macros = "=0.8.0"
+worker-sys = "=0.8.0"
+serde_json = "1"
+
+[profile.release]
+lto = true
+strip = true
+codegen-units = 1
